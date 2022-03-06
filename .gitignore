@@ -1,0 +1,95 @@
+# Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.heic
+*.JPG
+*.JPEG
+*.PNG
+*.BMP
+*.TIF
+*.TIFF
+*.HEIC
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.data
+*.json
+*.cfg
+*.lnk
+
+runs/*
+data/*
+data/images/*
+!data/*.yaml
+!data/hyps
+!data/scripts
+!data/images
+!data/images/zidane.jpg
+!data/images/bus.jpg
+!data/*.sh
+
+results*.csv
+
+# Datasets -------------------------------------------------------------------------------------------------------------
+dataset/
+coco/
+coco128/
+VOC/
+
+# MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
+*.m~
+*.mat
+!targets*.mat
+
+# Neural Network weights -----------------------------------------------------------------------------------------------
+*.weights
+*.pt
+*.pb
+*.onnx
+*.engine
+*.mlmodel
+*.torchscript
+*.tflite
+*.h5
+*_saved_model/
+*_web_model/
+*_openvino_model/
+darknet53.conv.74
+yolov3-tiny.conv.15
+
+# GitHub Python GitIgnore ----------------------------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+/wandb/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Yolo
+yolov5l
