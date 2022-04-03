@@ -1,0 +1,8 @@
+path: ../datasets/mask_dataset  # dataset root dir
+train: images/train
+val: images/valid
+test:  images/test # test images (optional)
+
+# Classes
+nc: 2  # number of classes
+names: [ "without mask", "with mask" ]  # class names
