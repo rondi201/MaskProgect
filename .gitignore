@@ -92,5 +92,12 @@ wheels/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# PyCharm
+.idea
+
 # Yolo
 yolov5/
+
+# Server ignor file
+/uploadedimages/
+*.sqlite3

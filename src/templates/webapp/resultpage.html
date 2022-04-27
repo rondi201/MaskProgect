@@ -1,0 +1,28 @@
+{% extends 'webapp/mainpattern.html' %}
+
+{% load static %}
+
+{% block title %}
+  Result
+{% endblock %}
+
+{#{% block link %}#}
+{#  <link rel="stylesheet" href="{% static 'webapp/startpage.css' %}">#}
+{#{% endblock %}#}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center">Нарушители масочного режима</h1>
+    <div class="row">
+      {% if images %}
+        {% for image in images %}
+          <div class="col-3">
+            <img src={{ image }}>
+          </div>
+        {% endfor %}
+      {% else %}
+        <h1></h1>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

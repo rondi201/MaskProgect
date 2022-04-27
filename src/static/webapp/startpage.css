@@ -1,0 +1,15 @@
+div.dropblock {
+    border-radius: 20px;
+    border-color: var(--bs-gray-600);
+    border-style: dashed;
+    color: var(--bs-gray-600);
+    /*height: 50%;*/
+    padding: 10% 0%;
+}
+
+.dropzone {
+    border-radius: 20px;
+    border-color: var(--bs-gray-600);
+    border-style: dashed;
+    color: var(--bs-gray-600);
+}

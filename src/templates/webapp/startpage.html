@@ -1,0 +1,24 @@
+{% extends 'webapp/mainpattern.html' %}
+
+{% load static %}
+
+{% block title %}
+  Start Page
+{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'dropzone/dropzone.css' %}">
+  <script src="{% static 'dropzone/dropzone.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'webapp/startpage.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <form action="{% url 'upload-file' %}" method="POST" class="dropzone">
+      {%csrf_token%}
+      <div class="fallback">
+        <input name="file" type="file" multiple />
+      </div>
+    </form>
+  </div>
+{% endblock %}
