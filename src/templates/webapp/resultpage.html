@@ -1,0 +1,75 @@
+{% extends 'mainpattern.html' %}
+
+{% load static %}
+
+{% block link %}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="{% static 'ajax-form.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="text-center">Нарушители масочного режима</h1>
+    <br>
+    <div class="row gx-5 gy-4">
+      {% if images %}
+        {% for image in images %}
+          <div class="col-3">
+            <div class="shadow p-2 bg-body rounded">
+              <img class="img-fluid rounded mx-auto d-block" src={{ image }}>
+            </div>
+          </div>
+        {% endfor %}
+
+        <br>
+        <div>
+          <button id="openDeleteDialog" class="btn btn-danger float-end">Удалить нарушителей</button>
+          <dialog class="align-center">
+            <p>Вы точно хотите удалить всех нарушителей из базы данных?</p>
+            <div class="row gx-5">
+              <div class="col-3 offset-md-5">
+                <button id="closeDialog" class="btn btn-light px-5 ">Нет</button>
+              </div>
+              <div class="col-3 offset-md-1">
+                <form action="{% url 'resultpage' %}" data-method="DELETE">
+                  {% csrf_token %}
+                  <input type="submit" value="Да" class="btn btn-danger px-4">
+                </form>
+              </div>
+            </div>
+          </dialog>
+        </div>
+      {% else %}
+        <h3 class="text-center">Нарушителей не найдено</h3>
+      {% endif %}
+    </div>
+  </div>
+  <script>
+       var dialog = document.querySelector('dialog');
+       document.querySelector('#openDeleteDialog').onclick = function() {
+        dialog.show(); // Показываем диалоговое окно
+       }
+       document.querySelector('#closeDialog').onclick = function() {
+        dialog.close(); // Прячем диалоговое окно
+       }
+      </script>
+  <script>
+    $(document).ready(function() {
+        $('form').ajaxForm();
+    });
+  </script>
+{#  <script>#}
+{#    $('#delete').submit(function(e) {#}
+{#        // do NOT submit the form as a regular POST request#}
+{#        e.preventDefault();#}
+{#        $.ajax({#}
+{#            type: 'POST',#}
+{#            url: "1",#}
+{#            success: function() {#}
+{#                alert('Object deleted!')#}
+{#            },#}
+{#            headers: { 'X-METHODOVERRIDE': 'DELETE' }#}
+{#        });#}
+{#    });#}
+{#  </script>#}
+{% endblock %}

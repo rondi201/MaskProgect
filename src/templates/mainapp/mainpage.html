@@ -1,0 +1,21 @@
+{% extends 'mainpattern.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="container px-4">
+    <h1 class="text-center">Наши Приложения</h1>
+    <br>
+    <div class="row justify-content-md-center gx-5 ">
+      <div class="col-3">
+          <div class="card shadow p-3 bg-body rounded ">
+            <img class="card-img-top" src={% static 'mainapp/image_icon.svg' %}>
+            <div class="card-body"></div>
+            <h5 class="card-title">Поиск нарушителей (фото)</h5>
+            <p class="card-text">Поиск нарушителей масочного режима на фотографии</p>
+            <a href="{% url 'resultpage' %}" class="btn btn-primary stretched-link">Перейти</a>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
