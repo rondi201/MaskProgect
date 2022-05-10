@@ -23,9 +23,20 @@ def image_to_uri(numpy_img):
     return uri_img
 
 
-def image_cut(img, box):
+def image_crop(img, box, box_extension: float = 0.0):
+    # xywh to xyxy
     xl, xr = box[0], box[0] + box[2]
     yt, yd = box[1], box[1] + box[3]
+    # add margin
+    y_margin, x_margin = (xr-xl) * box_extension, (yd-yt) * box_extension
+    xl, xr = int(xl - x_margin), int(xr + x_margin)
+    yt, yd = int(yt - y_margin), int(yd + y_margin)
+    # correcting out of image edge
+    if xl < 0: xl = 0
+    if xr > img.shape[1]: xr = img.shape[1]
+    if yt < 0: yt = 0
+    if yd > img.shape[0]: yd = img.shape[0]
+
     return img[yt:yd, xl:xr]
 
 
