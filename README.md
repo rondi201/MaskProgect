@@ -10,13 +10,13 @@
 <h3>1. Clone the Repo</h3>
 <p>Clone repo using git:</p>
 
-    git clone https://github.com/rondi201/MaskProgect.git
+    git clone --recurse-submodules https://github.com/rondi201/MaskProgect.git
 <p>or simply download using the url below:</p>
 <code>https://github.com/rondi201/MaskProgect.git</code>
 <p>and go to the project directory.</p>
 <h3>2. Setup pipenv & Install Requirements</h3>
 
-    pip install pipenv 
+    pip install pipenv
     pipenv install -r requirements.txt
     pipenv shell
 

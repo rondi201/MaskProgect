@@ -97,7 +97,7 @@ Pipfile*
 .idea
 
 # Yolo
-yolov5/
+yolov5test/
 
 # Server ignor file
 /uploadedimages/
