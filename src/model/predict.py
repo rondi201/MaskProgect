@@ -1,9 +1,4 @@
-import torch
-
-from torchvision import transforms
-
 from model.yolo import Yolo
-from tools.image_tools import image_load
 from webapp.models import Images, BoxWithoutMask
 
 
