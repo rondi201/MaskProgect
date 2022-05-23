@@ -88,6 +88,7 @@ wheels/
 /wandb/
 .installed.cfg
 *.egg
+Pipfile*
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -96,7 +97,7 @@ wheels/
 .idea
 
 # Yolo
-yolov5/
+yolov5test/
 
 # Server ignor file
 /uploadedimages/
